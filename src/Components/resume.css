@@ -1,0 +1,73 @@
+.Personal{
+    font-size: large;
+    letter-spacing: 0.5px;
+}
+.Personal1{
+    font-size: large;
+    letter-spacing: 0.5px;
+    font-weight:bolder;
+}
+.icon{
+    padding-right: 1.0rem;
+}
+.preview-cnt-r .preview-blk-list .preview-item{
+    margin-top: 1.8rem;
+  }
+
+.preview-cnt-r .preview-blk-title{
+    color: var(--clr-dark);
+  }
+  .preview-cnt-r .preview-blk-list .preview-item{
+    margin-top: 1.8rem;
+  }
+  
+  .achievements-items.preview-blk-list .preview-item span:first-child,
+  .projects-items.preview-blk-list .preview-item span:first-child,
+  .educations-items.preview-blk-list .preview-item span:first-child,
+  .experiences-items.preview-blk-list .preview-item span:first-child{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .educations-items.preview-blk-list .preview-item span:nth-child(2),
+  .projects-items.preview-blk-list .preview-item span:nth-child(2),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(2){
+    font-weight: 600;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .projects-items.preview-blk-list .preview-item span:nth-child(2){
+  color:blue;
+  }
+  
+  .educations-items.preview-blk-list .preview-item span:nth-child(3),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(3){
+    font-style: italic;
+    margin-right: 1rem;
+  }
+  
+  .educations-items.preview-blk-list .preview-item span:nth-child(4),
+  .educations-items.preview-blk-list .preview-item span:nth-child(5),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(4),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(5){
+    margin-right: 1rem;
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+  }
+  
+  .educations-items.preview-blk-list .preview-item span:nth-child(6),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(6){
+    font-size: 13.5px;
+    display: block;
+    opacity: 0.8;
+    margin-top: 1rem;
+  }
+  .projects-items.preview-blk-list .preview-item span{
+    display: block;
+  }
+  
