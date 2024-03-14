@@ -7,6 +7,42 @@ body{
     padding: 10px;
     background: linear-gradient(68deg, rgba(32,33,36,1) 1%, rgba(99,71,139,1) 7%, rgba(156,118,235,1) 92%, rgba(28,28,28,1) 99%);
   }
+
+  .download-btn{
+    margin-left: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    height: 100%;
+    width: 15%;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 1%;
+    transition: all 0.3s ease;
+    background: linear-gradient(152deg, rgba(182,89,189,1) 0%, rgba(119,61,201,1) 41%, rgba(62,36,212,1) 100%);
+ }
+ .logout{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+   height: 100%;
+    width: 15%;
+    border-radius: 10px;
+    border: none;
+   margin-left:855px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 1%;
+    transition: all 0.3s ease;
+    background:#e62121;
+ }
+ 
   
   @media(max-width: 1500px){
     body{
@@ -38,3 +74,67 @@ body{
     font-weight: 500;
     letter-spacing: 1px;
   }
+
+  .Personal{
+    font-size: large;
+    letter-spacing: 0.5px;
+}
+.Personal1{
+    font-size: large;
+    letter-spacing: 0.5px;
+    font-weight:bolder;
+}
+.icon{
+    padding-right: 1.0rem;
+}
+.preview-cnt-r .preview-blk-list .preview-item{
+    margin-top: 1.8rem;
+  }
+
+.preview-cnt-r .preview-blk-title{
+    color: var(--clr-dark);
+  }
+  .preview-cnt-r .preview-blk-list .preview-item{
+    margin-top: 1.8rem;
+  }
+  .preview-blk-list .preview-item{
+    font-size:0.8rem;
+    margin: 0.5rem 1rem 0.5rem 1.4rem;
+    opacity: 0.95;
+  }
+  .preview-blk-list .email{
+    font-size: 0.6rem;
+    margin-bottom: 0.2rem;
+    opacity: 0.95;
+  }
+
+  .text-error{
+    display: block;
+    color:#FF3333;
+}
+
+@media print{
+  body *{
+      visibility: hidden;
+  }
+
+  .non_print_area{
+      display: none;
+      visibility: hidden;
+  }
+
+  .print_area, .print_area *{
+      visibility: visible;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+  }
+
+  .print_area{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      overflow: hidden;
+      
+  }
+}
