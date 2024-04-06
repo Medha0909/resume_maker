@@ -3,17 +3,15 @@ import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';  
 import { Formik, Form, Field,useFormik} from 'formik';
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { FiLogOut } from "react-icons/fi";
 import { FaUser,FaHouseUser,FaPhoneAlt, FaEnvelope,FaBars,FaBriefcase,FaMouse,FaDownload} from "react-icons/fa";
-import { HiAcademicCap,HiLogout } from "react-icons/hi2";
+import { HiAcademicCap } from "react-icons/hi2";
 import {
     Flex,
     Container,
     Box,
-    img,
-    Section
   } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom';
 
   const phoneRegExp =/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
@@ -35,8 +33,14 @@ import {
   });  
   
 	
-function Details() {
- 
+const Details=(props)=> {
+  let navigate=useNavigate();
+  useEffect(()=>{
+  if( !localStorage.getItem('token')){
+   navigate("/login");
+  }
+  },[])
+const {showAlert}=props;
 
   const [firstname, setFirstname]=useState("");
   const [middlename, setMiddlename] = useState("");
@@ -296,13 +300,15 @@ const printResume=()=>{
 }
 
   return (
-    <Container shadow="0 5px 10px rgba(0,0,0,0.15)" borderRadius="7px" W='1500px' maxH='15000px' bg='#fff' center>
+    <div className='body'>
+    <Box bg= "linear-gradient(68deg, rgba(32,33,36,1) 1%, rgba(99,71,139,1) 7%, rgba(156,118,235,1) 92%, rgba(28,28,28,1) 99%)">
+    <Container mt="90px" ml="17%" mr="17%" shadow="0 5px 10px rgba(0,0,0,0.15)" borderRadius="7px" W='1500px' maxH='15000px' bg='#fff' center>
     <Flex>
     <Box bg='linear-gradient(152deg, rgba(182,89,189,1) 0%, rgba(119,61,201,1) 41%, rgba(62,36,212,1) 100%)' w='97%' mr="20px" ml="20px" mt="30px" mb="20px" p={4} borderRadius="7px" letterSpacing="1px" fontWeight="500" fontSize="20px" color="#fff" >
       PERSONAL {}
     </Box>
     </Flex>
-      <div className="container container-fluid">
+      <div>
         
         <Formik
           //initialValues={initialValues}
@@ -321,13 +327,13 @@ const printResume=()=>{
               <label className="form-label">Middle Name</label>
               <Field className="form-control middlename" name="middlename" type="text" onChange={(e) => setMiddlename(e.target.value)}/>
             </Box>
-            <Box mt="1rem" className="col-lg-4">
+            <Box  mt="1rem" className="col-lg-4">
             <label className="form-label" {...formik.getFieldProps('lastName')}>Last Name</label>
               <Field type="text" className="form-control lastname" name="lastname" onChange={(e) => setLastname(e.target.value)}/>
               {renderErrorMessage('lastName')} 
             </Box>
-          </Box>
-          <Box ml="1rem" mr="1rem" className="row">
+          
+        
             <Box mt="1rem" className="col-lg-4">
               <label className="form-label">Your Image</label>
               <Field className="form-control image" name = "image" type = "file" onChange={changeImage} accept = "image/*" />
@@ -343,8 +349,8 @@ const printResume=()=>{
               <Field className="form-control address" name="address" value={address} onChange={changeAddress}  type="text"/>
               {renderErrorMessage('address')}  
             </Box>
-          </Box>
-          <Box ml="1rem" mr="1rem" className="row">
+      
+          
             <Box mt="1rem" className="col-lg-4">
               <label for="email" className="form-label">Email</label>
               <Field className="form-control email" name="email" value={email} onChange={changeEmail} type="text"/>
@@ -371,7 +377,7 @@ const printResume=()=>{
       ACHIEVEMENTS
     </Box>
     </Flex>
-      <div className="container container-fluid">
+      <div>
         
         <Formik>
         <Form>
@@ -405,7 +411,7 @@ const printResume=()=>{
         EXPERIENCE
       </Box>
       </Flex>
-      <div className="container container-fluid">
+      <div>
         
         <Formik>
         <Form>
@@ -461,7 +467,7 @@ const printResume=()=>{
         EDUCATION
       </Box>
       </Flex>
-      <div className="container container-fluid">
+      <div>
         
         <Formik>
         <Form>
@@ -512,7 +518,7 @@ const printResume=()=>{
       PROJECT
     </Box>
     </Flex>
-      <div className="container container-fluid">
+      <div>
         
         <Formik>
         <Form>
@@ -552,7 +558,7 @@ const printResume=()=>{
       SKILLS
     </Box>
     </Flex>
-      <div className="container container-fluid">
+      <div>
         <Formik>
         <Form>
         <div className="invite-member4">
@@ -576,6 +582,7 @@ const printResume=()=>{
         </Form>
         </Formik> 
         </div> 
+      
 
         <Box id = "preview-sc" className = "print_area">
         <Container shadow="0 5px 10px rgba(0,0,0,0.15)" borderRadius="7px" W='1500px' maxH='15000px' bg='#fff' center>
@@ -583,7 +590,7 @@ const printResume=()=>{
           <Box className = "preview-cnt-l bg-green text-white" p='3rem 3rem 3rem 1.5rem' bgColor='#40679E'>
               <Box className = "preview-blk" mb='2rem'>
                   <Box className = "preview-image" w='120px' h='120px' borderRadius="50%" overflow='hidden' ml="auto" mr="auto" mt="1rem">
-                      <img  alt = "" src={image} id = "image_dsp"/> 
+                      <img  mt="5rem" alt = "" src={image} id = "image_dsp"/> 
                   </Box> 
               </Box>
 
@@ -591,22 +598,22 @@ const printResume=()=>{
                     <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
                       <h3 className="Personal">Personal</h3>
                     </Box>
-                    <Box  className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon'><FaUser /></span>Name</Box>
+                    <Box  className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon3'><FaUser /></span>Name</Box>
                     <div className = "preview-blk-list">
                     <Box className = "preview-item" fontSize='0.8rem' m='1rem 2.7rem 1rem 1.7rem' opacity='0.95'>
                     
                     <Box  className = "preview-item-val fw-6 green" pr='7px' id = "fullname1_dsp">{firstname +" "+ middlename + " "+ lastname}</Box>
                   
                     </Box>
-                    <Box className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon'><FaHouseUser /></span>Address</Box>
+                    <Box className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon3'><FaHouseUser /></span>Address</Box>
                     <Box className = "preview-item" fontSize='0.8rem' m='1rem 2.7rem 1rem 1.7rem' opacity='0.95'>
                       <Box className = "preview-item-val green" id = "address_dsp" pr='7px'>{address}</Box>
                     </Box>
-                    <Box className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon'><FaPhoneAlt /></span>Phone number</Box>
+                    <Box className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon3'><FaPhoneAlt /></span>Phone number</Box>
                     <Box className = "preview-item" fontSize='0.8rem' m='1rem 2.7rem 1rem 1.7rem' opacity='0.95'>
                           <Box className = "preview-item-val green" pr='7px' id = "phoneno_dsp">{phoneno}</Box>
                       </Box>
-                      <Box className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon'><FaEnvelope /></span>Email</Box>
+                      <Box className="personalheading" letterSpacing='1px' fontWeight='bold' fontSize='small'><span className='icon3'><FaEnvelope /></span>Email</Box>
                       <Box className = "preview-item email" fontSize='0.6rem' m='1rem 2.7rem 1rem 1.7rem' opacity='0.95'>
                           <Box className = "preview-item-val" id = "email_dsp">{email}</Box>
                       </Box>
@@ -631,43 +638,8 @@ const printResume=()=>{
         </Box>
         
         <Box className = "preview-blk" mb='1rem' ml="1.7rem" mt="3rem">
-          <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
-          <h3 className="Personal1"><span className='icon'> <FaBars /></span>Achievements</h3>
-          </Box>
-          {fields.map(field =>
-          <ul>
-          <li>
-          <Box mt="1rem" className = "achievements-items preview-blk-list" id = "achievements_dsp">{field.title}</Box>
-          </li>
-          </ul>
-        )}
-        
-        </Box>
-
-      <Box className = "preview-blk" mb='1rem' ml="1.7rem" mt="3rem">
-        <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
-           <h3 className="Personal1"><span className='icon'> <HiAcademicCap /></span>Education and Qualifications</h3>
-      </Box>
-        {fields2.map(field2 =>
-        <div>
-        <table>
-          <tr>
-            <td>
-            <Box mt="1rem" fontSize="15px" className = "experiences-items preview-blk-list" id = "experiences_dsp">{"("+field2.StartDate + ")"+" to " + "("+field2.EndDate+")"}</Box>
-            </td>
-            <td>
-            <Box mt="1rem" ml="1rem" fontSize="larger" letterSpacing="0rem" fontWeight="bold">{field2.Degree}</Box>
-            </td>
-          </tr>
-        </table>
-        <Box ml="13.3rem" fontSize="medium" letterSpacing="0rem" fontWeight="medium" color="DodgerBlue">{field2.School+", "+field2.City}</Box>
-       </div>
-        )}
-      </Box>
-
-      <Box className = "preview-blk" mb='1rem' ml="1.7rem" mt="3rem">
       <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
-        <h3 className="Personal1"><span className='icon'> <FaBriefcase /></span>Work Experience</h3>
+        <h3 className="Personal1"><span className='icon3'> <FaBriefcase /></span>Work Experience</h3>
       </Box>
         {fields1.map(field1 =>
         <div>
@@ -688,8 +660,30 @@ const printResume=()=>{
       </Box>
 
       <Box className = "preview-blk" mb='1rem' ml="1.7rem" mt="3rem">
+        <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
+           <h3 className="Personal1"><span className='icon3'> <HiAcademicCap /></span>Education and Qualifications</h3>
+      </Box>
+        {fields2.map(field2 =>
+        <div>
+        <table>
+          <tr>
+            <td>
+            <Box mt="1rem" fontSize="15px" className = "experiences-items preview-blk-list" id = "experiences_dsp">{"("+field2.StartDate + ")"+" to " + "("+field2.EndDate+")"}</Box>
+            </td>
+            <td>
+            <Box mt="1rem" ml="1rem" fontSize="larger" letterSpacing="0rem" fontWeight="bold">{field2.Degree}</Box>
+            </td>
+          </tr>
+        </table>
+        <Box ml="13.3rem" fontSize="medium" letterSpacing="0rem" fontWeight="medium" color="DodgerBlue">{field2.School+", "+field2.City}</Box>
+       </div>
+        )}
+      </Box>
+
+
+      <Box className = "preview-blk" mb='1rem' ml="1.7rem" mt="3rem">
       <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
-        <h3 className="Personal1"><span className='icon'> <FaBars /></span>Projects</h3>
+        <h3 className="Personal1"><span className='icon3'> <FaBars /></span>Projects</h3>
       </Box>
       {fields3.map(field3 =>
       <div>
@@ -702,20 +696,41 @@ const printResume=()=>{
 
      <Box className = "preview-blk" mb='1rem' ml="1.7rem" mt="3rem">
       <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
-        <h3 className="Personal1"><span className='icon'> <FaMouse /></span>Skills</h3>
+        <h3 className="Personal1"><span className='icon3'> <FaMouse /></span>Skills</h3>
       </Box>
       {fields4.map(field4 =>
       <Box mt="1rem" classame = "skills-items preview-blk-list" id = "skills_dsp">{field4.Skill}</Box>
       )}
     </Box>
+    
+        <Box className = "preview-blk" mb='1rem' ml="1.7rem" mt="3rem">
+          <Box className = "preview-blk-title" textTransform='uppercase' pb='0.5rem' borderBottom=' 0.5px solid rgba(0, 0, 0, 0.08)' mb="1rem">
+          <h3 className="Personal1"><span className='icon3'> <FaBars /></span>Achievements</h3>
+          </Box>
+          {fields.map(field =>
+          <ul>
+          <li>
+          <Box mt="1rem" className = "achievements-items preview-blk-list" id = "achievements_dsp">{field.title}</Box>
+          </li>
+          </ul>
+        )}
+        
+        </Box>
     </Box> 
           
       </Box>
       </Container>
-        </Box>      
-        <button type = "button" className = "download-btn" onClick={printResume}><span className='icon'> <FaDownload /> Export</span></button>
-        <button type = "button" className = "logout" onclick="window.location.href='/logout';"><span className='icon'> <FiLogOut /> Logout</span></button>
+        </Box> 
+        <table>
+        <tr>
+          <td>
+          <button type = "button" className = "download-btn" onClick={printResume}><span className='icon3'> <FaDownload /> Export</span></button>
+          </td>
+          </tr>
+          </table>
           </Container>
+ </Box>
+ </div>
   );
 
 }
