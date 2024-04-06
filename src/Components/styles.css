@@ -1,11 +1,17 @@
 
 /*Home page*/
 @import url("https://fonts.gstatic.com https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" );
-.body {
+.body1 {
     background-color: #E6E6FA;
     font-family: Signika;
+    width: 100%;
+    margin-left: 0%;
+    position: static;
+    padding-left: 0;
   }
-  
+  .button1{
+    margin-left: 70rem;
+  }
   
   h1,h3 {
     /* font-family: "Montserrat-Bold"; */
@@ -20,8 +26,8 @@
   
   .navbar {
       padding: 0 0 ;
-      height: 3rem;
-      
+      height: 4rem;
+      z-index: 10;
     }
   
   .navbar-brand-text{
@@ -94,7 +100,7 @@
     .title-image {
       margin-top: 3%;
       max-width: 25hw;  
-      right: 20%;
+      right:15rem;
       position: absolute;
       max-height:40vh;
     }
@@ -112,6 +118,9 @@
         position: static;
         min-height: 32vh;
         min-width:72hw;
+      }
+      .button1{
+        margin-left: 0rem;
       }
     }
   
@@ -176,26 +185,26 @@
       position: absolute;
       height:75vh;
     }
-      .base-image1 {
-      right:9.5%;
-      position: absolute;
+      .base_image1 {
+        right:15.5%;
+        position: absolute;
         border-radius:20px;
         box-shadow:10px 10px 5px grey;
         width: 18hw;
-      height:25vh;
-      margin-bottom: 5rem;
-    }
-    .base-image2 {
+        height:25vh;
+        margin-top: 3%;
+      }
+    .base_image2 {
       right: 15.5%;
       position: absolute;
         border-radius:20px;
         box-shadow:10px 10px 5px grey;
         width: 15hw;
-      height:28vh;
+      height:30vh;
       
     }
   
-  
+    
     @media (max-width: 1115px) {
       .base-image {
         position: flex;
@@ -205,14 +214,15 @@
         max-width:100%;
         left:10rem;
       }
-      .base-image1 {
-        position: static;
-        height: 150px;
-        width:400px;
-      }
-      .base-image2 {
+      .base_image1 {
         position: static;
         height: 250px;
+        width:400px;
+        margin-left: 0;
+      }
+      .base_image2 {
+        position: static;
+        height: 15vh;
         width:350px;
         margin-top: 3%;
       }
@@ -244,8 +254,6 @@
   
     .cont{
       padding-left: 10rem 10rem;
-      margin-left:3rem;
-      margin-bottom:5rem;
     
     }
   
@@ -302,7 +310,7 @@
       font-size: 1.2rem;
       /* font-family: "Montserrat-light"; */
   }
-  .container{
+  .container5{
     z-index: 10;
     border-radius: 12px;
   }
