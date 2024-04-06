@@ -3,9 +3,10 @@ import {React,useState} from "react";
 import './styles.css';
 import image_1 from "./images/image-1.jpeg";
 import axios from "axios";
+import {useNavigate} from 'react-router-dom'
 
 
-function Register (){
+function Register (props){
 
  
 
@@ -16,6 +17,36 @@ function Register (){
           changeColor('');
         }, 1000);
       };
+
+      const [credentials,setCredentials]=useState({username:"",password:""})
+      let navigate=useNavigate();
+      const handleSubmit=async (e)=>{
+      e.preventDefault();
+      const {username,password} = credentials;
+      const response = await fetch("http://localhost:5000/reg/createuser",{
+      method:'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({username, password})
+      });
+      const json = await response.json()
+      console.log(json);
+      if(json.success){
+        //save the authh token and redirect
+        localStorage.setItem('token',json.authtoken);
+        navigate("/resume");
+        props.showAlert("Account Created Succesfully","success");
+      }
+      else{
+        props.showAlert("Invalid credentials","danger");
+      }
+    }
+    const onChange=(e)=>{
+      setCredentials({...credentials,[e.target.name]: e.target.value})
+    }
+
+
     
     return(
         <div>
@@ -25,14 +56,14 @@ function Register (){
       <div className="image-box">
       <img className='imf' src={image_1} alt="" />
       </div>
-    <form action="/register" method="POST">
+    <form onSubmit={handleSubmit}>
       <div className="topic">REGISTER PAGE </div>
       <div className="input-box">
-        <input type="email" placeholder="Enter Your Email" name="username" required/>
+        <input type="email" placeholder="Enter Your Email" name="username" onChange={onChange} required/>
         <label>Enter your email</label>
       </div>
       <div className="input-box">
-        <input type="password" placeholder="Enter Password" name="password" required/>
+        <input type="password" placeholder="Enter Password" name="password" onChange={onChange} minLength={5} required/>
         <label>Enter your password</label>
       </div>
       <div class="input-box">
