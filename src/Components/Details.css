@@ -1,19 +1,24 @@
-body{
-    height: 400vh;
-    margin-left: 17%;
-    margin-right: 17%;
+.body{
     justify-content: center;
     align-items: center;
     padding: 10px;
     background: linear-gradient(68deg, rgba(32,33,36,1) 1%, rgba(99,71,139,1) 7%, rgba(156,118,235,1) 92%, rgba(28,28,28,1) 99%);
   }
-
+  .preview-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
   .download-btn{
     margin-left: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     height: 100%;
-    width: 15%;
+    width: 100%;
     border-radius: 10px;
     border: none;
     color: #fff;
@@ -21,28 +26,11 @@ body{
     font-weight: 500;
     letter-spacing: 1px;
     cursor: pointer;
-    padding: 1%;
+    padding: 5%;
     transition: all 0.3s ease;
     background: linear-gradient(152deg, rgba(182,89,189,1) 0%, rgba(119,61,201,1) 41%, rgba(62,36,212,1) 100%);
  }
- .logout{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-   height: 100%;
-    width: 15%;
-    border-radius: 10px;
-    border: none;
-   margin-left:855px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    padding: 1%;
-    transition: all 0.3s ease;
-    background:#e62121;
- }
- 
+
   
   @media(max-width: 1500px){
     body{
@@ -84,7 +72,7 @@ body{
     letter-spacing: 0.5px;
     font-weight:bolder;
 }
-.icon{
+.icon3{
     padding-right: 1.0rem;
 }
 .preview-cnt-r .preview-blk-list .preview-item{
@@ -114,13 +102,12 @@ body{
 }
 
 @media print{
-  body *{
+  .body,.bodyNav *{
       visibility: hidden;
   }
 
   .non_print_area{
       display: none;
-      visibility: hidden;
   }
 
   .print_area, .print_area *{
