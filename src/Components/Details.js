@@ -250,21 +250,6 @@ const handleSubtract4 = (i) => {
   values.splice(i, 1)
   setFields4([...values])
 }
-
-const formik = useFormik({  
-  initialValues: {  
-    firstName: '',  
-    lastName: '',  
-    emailId: '',  
-    mobileNumber: undefined,  
-    address: '',
-    designation: '',
-    image: '',
-  },
-  validationSchema: validationSchema  
-
-})  
-
 const renderErrorMessage = field => {  
   return (  
       formik.touched[field] && (  
@@ -290,9 +275,7 @@ const printResume=()=>{
       <div>
         
         <Formik
-          //initialValues={initialValues}
-          //validationSchema={validationSchema}
-          >
+                    >
         <form action="">
           <Box ml="1rem" mr="1rem" className="row">
             <Box mt="1rem" className="col-lg-4">
