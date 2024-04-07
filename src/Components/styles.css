@@ -10,9 +10,12 @@
     padding-left: 0;
   }
   .button1{
-    margin-left: 70rem;
+    margin-left: 65rem;
   }
   
+  .button2{
+    margin-left: 59rem;
+  }
   h1,h3 {
     /* font-family: "Montserrat-Bold"; */
     font-weight: bolder;
@@ -25,12 +28,14 @@
   }
   
   .navbar {
-      padding: 0 0 ;
-      height: 4rem;
+      padding: 0 0;
+      height: 3rem;
       z-index: 10;
+      width:84.5rem;
     }
   
   .navbar-brand-text{
+    margin-top:2srem;
     margin-left:5px;
     color: #1f1f1f;
   }
@@ -143,7 +148,7 @@
     }
   
     .title_button {
-      margin: 5% 3% 5% 0;
+      margin: 0% 1% 5% 0;
       /* font-family: "Montserrat-light"; */
     }
   
@@ -229,7 +234,7 @@
       
       .navbar {
         padding: 0 0 ;
-        height: 4rem;
+        height: 3rem;
       }
     
     }
