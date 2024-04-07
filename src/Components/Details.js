@@ -273,7 +273,6 @@ const printResume=()=>{
             
               <label htmlFor="firstname" className="form-label">First Name</label>
               <input className="form-control firstname" name="firstname" onChange={(e) => setFirstname(e.target.value)} type="text" placeholder="Enter your username"  />
-              {renderErrorMessage('firstName') }  
               
             </Box>
             <Box mt="1rem" className="col-lg-4">
