@@ -288,30 +288,25 @@ const printResume=()=>{
             <Box mt="1rem" className="col-lg-4">
               <label className="form-label">Your Image</label>
               <Field className="form-control image" name = "image" type = "file" onChange={changeImage} accept = "image/*" />
-              {renderErrorMessage('image')}
             </Box>
             <Box mt="1rem" className="col-lg-4">
               <label className="form-label">Designation</label>
               <Field className="form-control designation" name="designation" value={designation} onChange={changeDesignation} type="text" />
-              {renderErrorMessage('designation')}  
             </Box>
             <Box mt="1rem" className="col-lg-4">
             <label className="form-label">Address</label>
               <Field className="form-control address" name="address" value={address} onChange={changeAddress}  type="text"/>
-              {renderErrorMessage('address')}  
             </Box>
       
           
             <Box mt="1rem" className="col-lg-4">
               <label for="email" className="form-label">Email</label>
               <Field className="form-control email" name="email" value={email} onChange={changeEmail} type="text"/>
-              {renderErrorMessage('emailId')}  
 
             </Box>
             <Box mt="1rem" className="col-lg-4">
               <label className="form-label">Phone Number</label>
               <Field className="form-control phoneno" name="phoneno" value={phoneno} onChange={changePhoneno} type="number"  />
-              {renderErrorMessage('mobileNumber')}  
 
             </Box>
             <Box mt="1rem" className="col-lg-4">
