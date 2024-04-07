@@ -26,13 +26,13 @@ function Navbar()
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-    <ul className="button1 collapse navbar-collapse" id="navbarSupportedContent">
+    <ul className="collapse navbar-collapse" id="navbarSupportedContent">
     {
       !localStorage.getItem('token') ?
     (<>
-      <Link className="btn btn-dark btn-mid" style={{marginTop:"2rem",width: "7rem"}} to="/register" type="button" role="button"><i className="fa-solid fa-user" ></i> Register</Link>
-      <Link className="btn btn-dark btn-mid" style={{marginTop:"2rem",width:"5.7rem",marginLeft:"2rem"}} to="/login" type="button" role="button"><i className="fa-solid fa-user" ></i> Login</Link>
-      </>): (<button type = "button" style={{marginTop:"2rem",marginLeft:"5rem"}} onClick={handleLogout} className="btn btn-danger btn-mid title_button"><span className='icon3'> <FiLogOut /> Logout</span></button>)}
+      <Link className="btn btn-dark btn-mid button2" style={{marginTop:"2rem"}} to="/register" type="button" role="button"><i className="fa-solid fa-user" ></i> Register</Link>
+      <Link className="btn btn-dark btn-mid " style={{marginTop:"2rem",marginLeft:"2rem"}} to="/login" type="button" role="button"><i className="fa-solid fa-user" ></i> Login</Link>
+      </>): (<button type = "button" style={{marginTop:"2rem"}} onClick={handleLogout} className="button1 btn btn-danger btn-mid title_button"><span className='icon3'> <FiLogOut /> Logout</span></button>)}
     </ul>
   </div>
 </nav>
