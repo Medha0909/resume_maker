@@ -5,8 +5,8 @@
     background: linear-gradient(68deg, rgba(32,33,36,1) 1%, rgba(99,71,139,1) 7%, rgba(156,118,235,1) 92%, rgba(28,28,28,1) 99%);
   }
   .preview-image{
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: auto;
@@ -87,7 +87,7 @@
   }
   .preview-blk-list .preview-item{
     font-size:0.8rem;
-    margin: 0.5rem 1rem 0.5rem 1.4rem;
+    margin: 0.5rem 1rem 0.5rem 1.8rem;
     opacity: 0.95;
   }
   .preview-blk-list .email{
