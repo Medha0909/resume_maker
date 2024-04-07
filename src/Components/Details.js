@@ -1,6 +1,5 @@
 import './Details.css';
 import Button from 'react-bootstrap/Button';
-import * as yup from 'yup';  
 import { Formik, Form, Field,useFormik} from 'formik';
 import React, { useState, useEffect } from "react";
 import { FiLogOut } from "react-icons/fi";
@@ -12,26 +11,6 @@ import {
     Box,
   } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
-
-  const phoneRegExp =/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
-  const validationSchema = yup.object().shape({  
-    firstName: yup  
-      .string()  
-      .required('First name is required!')  
-      .min(3, 'Minimum 3 characters required'),  
-    lastName: yup.string().required('Laast name is required!'),  
-    emailId: yup  
-      .string()  
-      .required('Email ID is required!')  
-      .email('Enter valid email id'),  
-    mobileNumber: yup.string().matches(phoneRegExp, 'Phone number is not valid!')
-    .required("required!"),
-    address:yup.string().required("ddress is required!"),
-    designation:yup.string().required("Designation is required!"),
-    image:yup.mixed().required("Image is required!"),
-  });  
-  
 	
 const Details=(props)=> {
   let navigate=useNavigate();
