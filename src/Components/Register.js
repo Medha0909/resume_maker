@@ -2,7 +2,6 @@ import 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.mi
 import {React,useState} from "react";
 import './styles.css';
 import image_1 from "./images/image-1.jpeg";
-import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 
 
