@@ -250,15 +250,6 @@ const handleSubtract4 = (i) => {
   values.splice(i, 1)
   setFields4([...values])
 }
-const renderErrorMessage = field => {  
-  return (  
-      formik.touched[field] && (  
-      <div className="text-error">{formik.errors[field]}</div>  
-    )
-    
-  );  
-};  
-
 const printResume=()=>{
   window.print();
 }
@@ -290,9 +281,8 @@ const printResume=()=>{
               <Field className="form-control middlename" name="middlename" type="text" onChange={(e) => setMiddlename(e.target.value)}/>
             </Box>
             <Box  mt="1rem" className="col-lg-4">
-            <label className="form-label" {...formik.getFieldProps('lastName')}>Last Name</label>
-              <Field type="text" className="form-control lastname" name="lastname" onChange={(e) => setLastname(e.target.value)}/>
-              {renderErrorMessage('lastName')} 
+            <label className="form-label">Last Name</label>
+              <Field type="text" className="form-control lastname" name="lastname" onChange={(e) => setLastname(e.target.value)}/> 
             </Box>
           
         
