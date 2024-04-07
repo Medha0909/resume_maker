@@ -32,7 +32,7 @@ function Navbar()
     (<>
       <Link className="btn btn-dark btn-mid button2" style={{marginTop:"2rem"}} to="/register" type="button" role="button"><i className="fa-solid fa-user" ></i> Register</Link>
       <Link className="btn btn-dark btn-mid " style={{marginTop:"2rem",marginLeft:"2rem"}} to="/login" type="button" role="button"><i className="fa-solid fa-user" ></i> Login</Link>
-      </>): (<button type = "button" style={{marginTop:"2rem"}} onClick={handleLogout} className="button1 btn btn-danger btn-mid title_button"><span className='icon3'> <FiLogOut /> Logout</span></button>)}
+      </>): (<button type = "button" style={{marginTop:"2rem",marginLeft:"5rem"}} onClick={handleLogout} className="button1 btn btn-danger btn-mid title_button"><span className='icon3'> <FiLogOut /> Logout</span></button>)}
     </ul>
   </div>
 </nav>
