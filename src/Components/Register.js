@@ -22,7 +22,7 @@ function Register (props){
       const handleSubmit=async (e)=>{
       e.preventDefault();
       const {username,password} = credentials;
-      const response = await fetch("http://localhost:10000/reg/createuser",{
+      const response = await fetch("http://localhost:5000/reg/createuser",{
       method:'POST',
         headers:{
           'Content-Type': 'application/json'
