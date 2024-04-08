@@ -65,7 +65,7 @@ function Home()
             <Link type="button" className="btn btn-dark btn-mid title_button" role="button" to="/resume"> Create my resume</Link>
           </div>
     <div className="col-lg-6">
-    <img className="base-image" src={sample} alt="sample"/>
+    <img className="base_image" src={sample} alt="sample"/>
     </div>
       </div>
   </div>
