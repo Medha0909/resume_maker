@@ -20,7 +20,6 @@ connecttomongo();
 app.use(express.json());
 
 app.use('/reg',require ("./routes/reg"));
-app.use('/log',require ("./routes/reg"));
 
 
 //app.post("/", (req, resp) => {
