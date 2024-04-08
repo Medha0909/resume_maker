@@ -257,7 +257,7 @@ const printResume=()=>{
   return (
     <div className='body'>
     <Box bg= "linear-gradient(68deg, rgba(32,33,36,1) 1%, rgba(99,71,139,1) 7%, rgba(156,118,235,1) 92%, rgba(28,28,28,1) 99%)">
-    <ContainerclassName="abc" mt="90px" shadow="0 5px 10px rgba(0,0,0,0.15)" borderRadius="7px" W='1500px' maxH='15000px' bg='#fff' center>
+    <Container className="abc" mt="90px" shadow="0 5px 10px rgba(0,0,0,0.15)" borderRadius="7px" W='1500px' maxH='15000px' bg='#fff' center>
     <Flex>
     <Box bg='linear-gradient(152deg, rgba(182,89,189,1) 0%, rgba(119,61,201,1) 41%, rgba(62,36,212,1) 100%)' w='97%' mr="20px" ml="20px" mt="30px" mb="20px" p={4} borderRadius="7px" letterSpacing="1px" fontWeight="500" fontSize="20px" color="#fff" >
       PERSONAL {}
