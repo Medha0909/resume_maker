@@ -12,6 +12,7 @@
   .button1{
     margin-left: 60rem;
   }
+  
   h1,h3 {
     /* font-family: "Montserrat-Bold"; */
     font-weight: bolder;
@@ -144,7 +145,7 @@
     }
   
     .title_button {
-       margin: 5% 3% 5% 0;
+      margin: 5% 3% 5% 0;
       /* font-family: "Montserrat-light"; */
     }
   
@@ -180,7 +181,7 @@
       background:#E6E6FA;
     }
   
-    .base-image {
+    .base_image {
       min-width: 20hw;
       right: 10%;
       position: absolute;
@@ -207,30 +208,33 @@
   
     
     @media (max-width: 1115px) {
-      .base-image {
-        position: flex;
+      .base_image {
+        position: center;
         height: 45vh;
-        min-width:20hw;
-        flex-wrap: wrap;
+        width:15rem;
         max-width:100%;
-        left:10rem;
+        right:3rem;
       }
       .base_image1 {
         position: static;
         height: 250px;
-        width:400px;
+        width:15rem;
         margin-left: 0;
       }
       .base_image2 {
         position: static;
         height: 15vh;
-        width:350px;
+        width:15rem;
         margin-top: 3%;
+        overflow: hidden;
       }
-      
+      .title-image{
+        width:15rem;
+      }
       .navbar {
         padding: 0 0 ;
         height: 3rem;
+        width:100%
       }
     
     }
