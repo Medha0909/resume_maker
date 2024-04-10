@@ -17,7 +17,7 @@ function Login (props){
       let navigate=useNavigate();
       const handleSubmit=async (e)=>{
       e.preventDefault();
-      const response = await fetch("/getAll",{
+      const response = await fetch("/getAll/reg/login",{
         method:'POST',
         headers:{
           'Content-Type': 'application/json'
