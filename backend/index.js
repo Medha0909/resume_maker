@@ -4,10 +4,10 @@ const express = require('express');
 const app = express();
 const cors = require("cors");
 app.use(express.json());
-app.use(cors());
 const connecttomongo= require("./models/db");
 connecttomongo();
 
+app.use(cors());
 
  app.get("/", (req, resp) => {
 	resp.send("Hello world");
