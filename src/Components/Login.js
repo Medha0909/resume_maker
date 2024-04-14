@@ -20,7 +20,6 @@ function Login (props){
       const response = await fetch("http://localhost:1000/reg/login",{
         method:'POST',
         headers:{
-	'Access-Control-Allow-Origin':'*',
           'Content-Type': 'application/json'
         },
         body:JSON.stringify({username:credentials.username, password:credentials.password})
