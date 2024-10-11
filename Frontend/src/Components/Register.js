@@ -21,7 +21,7 @@ function Register (props){
       const handleSubmit=async (e)=>{
       e.preventDefault();
       const {username,password} = credentials;
-      const response = await fetch("https://e-commerce-server-omav.onrender.com/reg/createuser",{
+      const response = await fetch("https://resume-maker-4.onrender.com/reg/createuser",{
       method:'POST',
         headers:{
           'Content-Type': 'application/json'
